@@ -35,6 +35,7 @@ jobs:
     name: Despliegue simulado a staging
     runs-on: ubuntu-latest
     # Encuentra el defecto: ¿qué falta para que este job espere a las pruebas?
+    needs: pruebas
     steps:
       - name: Simular despliegue
         run: echo "Despliegue simulado de ${{ github.sha }} a staging (sin servidor real)."
